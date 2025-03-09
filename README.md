@@ -1,7 +1,9 @@
 # xxec
 A command-line tool for exploiting XXE injection via file uploads
 
-I built this tool to automate XXE injection for the **HackTheBox - File Upload Attacks** module. The script fuzzes for file extensions that have code execution, uploads a webshell and then allows the user to issue commands directly from the command line. 
+I built this tool to automate XXE injection for the **HackTheBox - File Upload Attacks** module. 
+
+The script fuzzes for file extensions that have code execution, uploads a webshell and then allows the user to issue commands directly from the command line. 
 
 ## Arguments
 
@@ -12,7 +14,7 @@ I built this tool to automate XXE injection for the **HackTheBox - File Upload A
 
 ## Wordlist Generation
 
-If you are coming here from HTB, you should make use of the wordlist generator provided within the module. 
+If you are coming here from the **File Upload Attacks - Skills Assessment** on **HTB**, you should make use of the wordlist generator provided within the module. 
 
 Adjusted for the tool:
 
