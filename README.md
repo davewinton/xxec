@@ -32,7 +32,7 @@ done
 ## Usage
 
 ```shell
-python3 xxec.py -H SERVER -p PORT -w extensions.svg -c 'path/to/directory/'
+python3 xxec.py -H SERVER -p PORT -w extensions-svg.txt -c 'path/to/directory/'
 
 [TEST 1/36] Trying extension: ..php.svg
 [UPLOAD SUCCESS] test..php.svg -> Checking execution...
