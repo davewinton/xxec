@@ -101,10 +101,10 @@ def main():
     parser.add_argument("-c","--check", required=True, help="Directory to check")
     parser.add_argument("-u","--url", required=True, help="Host url")
     args = parser.parse_args()
-    
+
     base_url = args.url
     check_base_url = f"{extract_url_parts(base_url)}/{args.check}"
-    payload = TEST_PAYLOAD
+    payload = TEST_PAYLOAD  
     
     with open(args.wordlist, "r") as f:
         extensions = [line.strip() for line in f.readlines()]
