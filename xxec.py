@@ -87,8 +87,6 @@ def extract_url_parts(url):
     
     scheme = parsed_url.scheme
     host = parsed_url.netloc
-
-    print(host)
     
     if host and scheme:
         return f"{scheme}://{host}"
