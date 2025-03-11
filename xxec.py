@@ -82,16 +82,28 @@ def execute_command(base_url, filename):
         except requests.RequestException as e:
             print(f"[ERROR] Command execution failed: {e}")
 
+def extract_url_parts(url):
+    parsed_url = urllib.parse.urlparse(url)
+    
+    scheme = parsed_url.scheme
+    host = parsed_url.netloc
+
+    print(host)
+    
+    if host and scheme:
+        return f"{scheme}://{host}"
+    else:
+        return None
+
 def main():
     parser = argparse.ArgumentParser(description="File Upload Fuzzer")
     parser.add_argument("-w", "--wordlist", required=True, help="Path to wordlist file")
-    parser.add_argument("-H", "--host", required=True, help="Target server")
-    parser.add_argument("-p", "--port", required=True, help="Target port")
     parser.add_argument("-c","--check", required=True, help="Directory to check")
+    parser.add_argument("-u","--url", required=True, help="Host url")
     args = parser.parse_args()
     
-    base_url = f"http://{args.host}:{args.port}/contact/upload.php"
-    check_base_url = f"http://{args.host}:{args.port}/{args.check}"
+    base_url = args.url
+    check_base_url = f"{extract_url_parts(base_url)}/{args.check}"
     payload = TEST_PAYLOAD
     
     with open(args.wordlist, "r") as f:

